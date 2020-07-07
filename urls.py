@@ -15,9 +15,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path,include
+from .import views
+
+app_name="fraud"
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('fraudapp/',include('Detection.urls'))
+    path('',views.index,name="index"),
+    path('student',views.home,name="home"),
+    path('reg',views.reg,name="reg"),
+    path('template',views.temp,name="temp"),
+    path('login',views.login,name="login"),
+    path('user_chk',views.user_chk,name="user_chk"),
+    path('register',views.register,name="register"),
+    path('forgot_pswd',views.forgot_pswd,name="forgot_pswd.html"),
+    path('loadData',views.loadData,name="loadData"),
+    path('reviewApp',views.reviewApp,name="reviewApp"),
+    path('sendreview',views.sendreview,name="reviewApp"),
+    path('seereview',views.seereview,name="seereview"),
+    path('saveUser',views.saveUser,name="saveUser"),
+
+    path('Ownerreg',views.Ownerreg,name="Ownerreg"),
+    path('Ownerregister',views.Ownerregister,name="Ownerregister")
 
 ]
+
